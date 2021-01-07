@@ -148,7 +148,9 @@ AddFunctions <- function(){
 
   #' @export
   embedSeqtab <- function(seqtab, fasta_file, best_hits, embedding_file_name){
+    print("hi")
     seqtab_transformed <- transformSeqtab(seqtab = seqtab, fasta_file = fasta_file, best_hits = best_hits)
+    print("bye")
     qual_vecs <- read.csv(embedding_file_name, row.names=1, sep="")
     qual_vecs <- qual_vecs[colnames(seqtab_transformed), ]
     embedded <- as.matrix(seqtab_transformed) %*% as.matrix(qual_vecs)
@@ -156,14 +158,14 @@ AddFunctions <- function(){
   }
 }
 
-EmbedAsvTable <- function(blast_hits_file, embedding_file_name){
+EmbedAsvTable <- function(blast_hits, embedding_file_name){
   #AddFunctions()
-  blast_hits <- read.delim(blast_hits_file)
-  embedding_file_name <- read.delim(embedding_file_name)
+  #blast_hits <- read.delim(blast_hits_file)
+  #embedding_file_name <- read.delim(embedding_file_name)
 
   #
-  blast_hits <- read.delim("/Users/austineaton/David_Lab/gut_microbiome_embeddings_package-master/data/blast_output/blast_hits.tsv")
-  embedding_file_name <- read.delim("/Users/austineaton/David_Lab/gut_microbiome_embeddings_package-master/data/embed_matrices/embed_.07_100dim.txt")
+  #blast_hits <- read.delim("/Users/austineaton/David_Lab/gut_microbiome_embeddings_package-master/data/blast_output/blast_hits.tsv")
+  #embedding_file_name <- read.delim("/Users/austineaton/David_Lab/gut_microbiome_embeddings_package-master/data/embed_matrices/embed_.07_100dim.txt")
   #
   #2. Run blast to rename your sequences with the nearest sequence available in the embedding matrix
   #blast_software_dir/blastn -db path_to_blast_db -query fasta.fasta -out output_file_name  -outfmt "6 qseqid sseqid qseq sseq evalue bitscore length pident"
