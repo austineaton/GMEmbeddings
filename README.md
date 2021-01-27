@@ -91,6 +91,9 @@ Now, time for us to run the **EmbedAsvTable** function!
 EmbedAsvTable(blast_hits, embedding_file_name)
 ```
 
+This should print to the console:
+![image]
+(https://github.com/austineaton/GMEmbeddings/blob/main/image.png)
 
 ### And coding style tests
 
