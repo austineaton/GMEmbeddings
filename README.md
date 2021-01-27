@@ -8,7 +8,6 @@
 
 ### Prerequisites
 
-~~(What things you need to install the software and how to install them)~~
 Before installing this package, make sure that you have the required prerequisite packages already installed. These packages include `plyr` and `seqinr`.
 If not already installed, use:
 ```
